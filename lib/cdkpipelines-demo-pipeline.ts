@@ -2,7 +2,7 @@ import * as codepipeline from "@aws-cdk/aws-codepipeline";
 import * as actions from "@aws-cdk/aws-codepipeline-actions";
 import { Construct, SecretValue, Stack, StackProps } from "@aws-cdk/core";
 import { CdkPipeline, SimpleSynthAction } from "@aws-cdk/pipelines";
-import { CdkpipelinesDemoStack } from "./cdkpipelines-demo-stack";
+import { CkdPipelinesDemoStage } from "./cdkpipelines-demo-stage";
 
 export interface CdkPipelinesDemoPipelineProps extends StackProps {
   github: {
@@ -37,5 +37,14 @@ export class CdkPipelinesDemoPipeline extends Stack {
         buildCommand: "npm run build",
       }),
     });
+
+    pipeline.addApplicationStage(
+      new CkdPipelinesDemoStage(this, "PreProd", {
+        env: {
+          account: props.env?.account,
+          region: props.env?.region,
+        },
+      })
+    );
   }
 }
