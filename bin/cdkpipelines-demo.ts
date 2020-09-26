@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = new cdk.App();
 
-new CdkPipelinesDemoPipeline(app, "CdkpipelinesDemoStack", {
+new CdkPipelinesDemoPipeline(app, "CdkpipelinesDemoPipeline", {
   env: {
     account: process.env.AWS_ACCOUNT,
     region: process.env.AWS_ACCOUNT,
