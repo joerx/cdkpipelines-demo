@@ -19,5 +19,3 @@ new CdkPipelinesDemoPipeline(app, "CdkpipelinesDemoPipeline", {
     owner: "joerx",
   },
 });
-
-app.synth();
