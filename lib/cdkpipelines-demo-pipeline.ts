@@ -12,6 +12,12 @@ export interface CdkPipelinesDemoPipelineProps extends StackProps {
   };
 }
 
+/**
+ * Stack to deploy the CDK pipeline. Pipeline does the following:
+ * - Pulls sources from GitHub
+ * - Synthesize the CDK app into a CFN template that updates the pipeline itself
+ * - Deploy the application stack as a Stage
+ */
 export class CdkPipelinesDemoPipeline extends Stack {
   constructor(scope: Construct, id: string, props: CdkPipelinesDemoPipelineProps) {
     super(scope, id, props);

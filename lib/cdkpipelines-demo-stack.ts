@@ -4,6 +4,10 @@ import * as apigw from "@aws-cdk/aws-apigateway";
 import * as path from "path";
 import { CfnOutput } from "@aws-cdk/core";
 
+/**
+ * This stack contains the actual application - a simple lambda function and REST Api 
+ * in this example.
+ */
 export class CdkpipelinesDemoStack extends cdk.Stack {
   public readonly urlOutput: cdk.CfnOutput;
 
